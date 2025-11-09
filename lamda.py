@@ -67,8 +67,15 @@ def lambda_handler(event, context):
                 }
             },
             {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "테스트 환경에서 새 버전이 잘 작동하는지 확인해 주세요!\n「テスト環境で新しいバージョンがちゃんと動くか、確認お願いします〜！」"
+                }
+            },
+            {
               "type": "image",
-              "image_url": "https://github.com/SoftBank-Hackaton-WaterMelon/Chiikawa/blob/main/deploy_complete.gif?raw=true",
+              "image_url": "https://github.com/SoftBank-Hackaton-WaterMelon/Chiikawa/blob/main/wait_for_tests.gif?raw=true",
               "alt_text": "Success - Thumbs up dog"
             },
             {
@@ -92,9 +99,14 @@ def lambda_handler(event, context):
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    # 👉 (u+1F449)
-                    "text": "테스트 완료 후, 이 배포 ID를 사용하여 승인해주세요.\n" \
-                            f"👉 `/platform-deploy-approve {deployment_id}`"
+                    "text": "테스트 완료 후, 아래의 명령어로 배포를 완료해주세요!\n「テスト完了後、以下のコマンドでデプロイを完了してください」\n"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": f"👉 `/platform-deploy-approve {deployment_id}`"
                 }
             }
         ]
